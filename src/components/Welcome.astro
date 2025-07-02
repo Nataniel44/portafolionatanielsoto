@@ -1,0 +1,109 @@
+<div class="relative isolate overflow-hidden bg-gray-900  py-12  ">
+    <!-- Fondo con gradiente y desenfoque -->
+    <div class="absolute inset-0 backdrop-grayscale-50 -z-10 bg-gradient-to-r from-gray-900/80 to-gray-900/60 backdrop-blur-xs "></div>
+  
+    <!-- Imagen de fondo -->
+ 
+    
+<!-- Fondo con mask-image en mobile -->
+<div
+  class="absolute top-0 flex jus -z-20 h-full w-full bg-center bg-cover bg-no-repeat bg-[url('/src/assets/nata1.jpg')] mask-b-from-50% mask-b-to-100% sm:hidden"
+></div>
+
+<!-- Fondo con blob SVG como máscara en sm: -->
+<svg
+  class="hidden sm:block absolute inset-y-0 -right-10 w-[350px] grayscale-50 h-full -z-10 pointer-cross sm:p-5"
+  viewBox="0 0 600 800"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="xMidYMid slice"
+>
+  <defs>
+    <mask id="blobMask">
+      <path
+        fill="white"
+        d="M421.5,547.5Q372,655,260.5,676Q149,697,97.5,598.5Q46,500,64.5,389Q83,278,137.5,172.5Q192,67,292.5,106.5Q393,146,445.5,243Q498,340,460.5,447.5Q423,555,421.5,547.5Z"
+      />
+    </mask>
+  </defs>
+
+  <image
+    href="/src/assets/nata1.jpg"
+    width="100%"
+    height="100%"
+    class=""
+    mask="url(#blobMask)"
+    preserveAspectRatio="xMidYMid slice"
+  />
+</svg>
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto  lg:mx-0">
+        <!-- Título -->
+        <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-white uppercase">
+          Nataniel Soto
+        </h1>
+  
+        <!-- Descripción -->
+        <p class="mt-6 text-balance w- text-lg leading-8 text-gray-300">
+         <span class="text-yellow-300 font-bold">Desarrollador web</span>  de software apasionado por la tecnología y la creación de soluciones innovadoras.
+        </p>
+  
+        <!-- Botones principales -->
+        <div class="mt-10 flex flex-col sm:flex-row sm:items-center sm:gap-x-6 gap-y-4">
+          <a
+            href="#proyectos"
+            class="inline-block scroll-smooth rounded-md bg-indigo-500 px-5 py-3 text-sm font-semibold text-white shadow-md hover:bg-indigo-400 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+          >
+            Ver mis proyectos
+          </a>
+  
+          
+          <a href="/src/assets/cvnata3.pdf" class="ps-2 text-sm font-medium text-white hover:text-indigo-400 transition">
+           Ver curriculum <span aria-hidden="true">→</span>
+          </a>
+          <a href="#contacto" class="text-sm font-medium text-white hover:text-indigo-400 transition">
+            Contáctame <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        </div>
+        <!-- Íconos sociales -->
+        <div class="mt-8 flex gap-6">
+          <a
+            href="https://github.com/natanielsoto"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group"
+          >
+            <svg
+              class="h-6 w-6 text-gray-300 group-hover:text-white transition"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 0a12 12 0 00-3.8 23.4c.6.1.8-.2.8-.5v-2c-3.3.7-4-1.5-4-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.9.1-.6.3-1.1.6-1.4-2.7-.3-5.6-1.3-5.6-5.9 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.3a11.4 11.4 0 016 0c2.3-1.6 3.3-1.3 3.3-1.3.6 1.7.2 2.9.1 3.2.8.9 1.2 2 1.2 3.3 0 4.6-2.9 5.6-5.7 5.9.3.3.7.9.7 1.9v2.8c0 .3.2.6.8.5A12 12 0 0012 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+  
+          <a
+            href="https://www.linkedin.com/in/natanielsoto/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group"
+          >
+            <svg
+              class="h-6 w-6 text-gray-300 group-hover:text-white transition"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.3h.1c.7-1.3 2.4-2.6 4.9-2.6 5.3 0 6.3 3.5 6.3 8v9.3h-5V17c0-2.4 0-5.6-3.4-5.6-3.4 0-3.9 2.6-3.9 5.3v7.3h-5V8z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

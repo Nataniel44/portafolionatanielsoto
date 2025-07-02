@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Footer from '../components/Footer.astro';
+
+---
+<Layout>
+	<Welcome />
+	
+	<section id="proyectos" class="bg-gray-900  py-12">
+		<div class="max-w-7xl mx-auto px-6 lg:px-8">
+		  <h2 class="text-4xl font-bold tracking-tight text-white">Proyectos</h2>
+		  <p class="mt-4 text-lg text-gray-400">Algunos proyectos recientes.</p>
+		  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-4">
+			{projects.map(project => (
+			  <ProjectCard
+				url={project.data.url}
+				title={project.data.title}
+				description={project.data.description}
+				image={project.data.image}
+				slug={project.slug}
+			  />
+			))}
+		  </section>
+		</div>
+	  </section>
+	  <Footer>	</Footer>
+</Layout>

@@ -1,0 +1,88 @@
+---
+export const prerender = true;
+export const viewTransition = 'default';
+
+import { getCollection } from 'astro:content';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { title, description, date, image, tags, url } = project.data;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>Astro Basics</title>
+  <link rel="stylesheet" href="/src/styles/global.css">
+</head>
+<article class="max-w-3xl mx-auto p-6 bg-gray-900 text-gray-300  shadow-xl transition-all duration-500 animate-fade-in">
+  <img
+    src={image}
+    alt={title}
+    class="w-full h-64 object-cover rounded-lg mb-6 transition-transform duration-500 ease-in-out view-transition-image"
+  />
+
+  <h1 class="text-4xl font-bold text-white mb-3 view-transition-title">{title}</h1>
+  <p class="text-gray-400 text-lg mb-5">{description}</p>
+
+  <a
+    href="/"
+    class="inline-block px-5 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition duration-300 view-transition"
+  >
+    ← Volver a Proyectos
+  </a>
+
+  <a
+  href={url}
+  class="inline-block px-5 py-2 bg-green-600 text-white rounded-xl hover:bg-indigo-700 transition duration-300 view-transitionn"
+  target="_blank" 
+  rel="noopener noreferrer"
+  >Visit Project</a>
+
+  <div class="text-sm text-gray-500 mt-6 mb-4">📅 {date.toLocaleDateString()}</div>
+
+  <div class="flex flex-wrap gap-2 mb-6">
+    {tags.map(tag => (
+      <span class="px-3 py-1 text-sm bg-indigo-700 text-white rounded-full shadow-sm">{tag}</span>
+    ))}
+  </div>
+
+  <div class="prose prose-invert max-w-none">
+    {project.body}
+  </div>
+</article>
+<Footer></Footer>
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-in-out forwards;
+  }
+
+  .view-transition-image {
+    view-transition-name: image;
+  }
+
+  .view-transition-title {
+    view-transition-name: title;
+  }
+</style>
