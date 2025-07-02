@@ -2,7 +2,7 @@
 title: "Boston Burger"
 description: "Hamburguesería estilo urbano con identidad fuerte"
 date: 2025-02-10
-image: "/src/assets/bos.PNG"
+image: "/bos.PNG"
 tags: ["Astro", "Frontend", "Tailwind"]
 url: "https://example.com/boston-burger"
 ---
