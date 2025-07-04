@@ -2,7 +2,7 @@
 title: "Instituto Mundo Informática"
 description: "Sitio institucional para formación educativa"
 date: 2024-10-20
-image: "src/assets/ins.PNG"
+image: "/ins.PNG"
 tags: ["Astro", "Educación", "UI"]
 url: "https://example.com/proyecto4" # Replace with the actual project URL
 ---
