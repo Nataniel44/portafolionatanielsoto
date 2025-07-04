@@ -2,7 +2,7 @@
 title: "Pink Indumentarias"
 description: "Tienda de ropa femenina moderna y elegante"
 date: 2024-11-15
-image: "./pin.PNG"
+image: "src/assets/pin.PNG"
 url: "https://pinkindumentarias.web.app"
 tags: ["Astro", "JavaScript", "E-commerce"]
 ---

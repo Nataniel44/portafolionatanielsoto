@@ -2,7 +2,7 @@
 title: "Top One Burgers"
 description: "Sitio de hamburguesas en línea"
 date: 2024-12-01
-image: "./top.png"
+image: "src/assets/top.png"
 tags: ["Nextjs", "Firebase","Frontend"]
 url: "https://toponeburgers.web.app" # Replace with the actual URL
 ---
