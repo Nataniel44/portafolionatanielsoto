@@ -15,8 +15,8 @@ const { title, description, image, slug, url } = Astro.props;
 <div
 class="group block rounded-xl bg-gray-800/50 ring-1 ring-white/10 p-4 hover:bg-gray-800/70 transition view-transition"
 >
-<a href={`/projects/${slug}/`}>
-    <img src={image} alt={title} class="h-48 w-full object-cover rounded-md mb-4" loading="lazy" />
+<a  href={`/projects/${slug}/`} >
+    <img  src={image} alt={title} transition:name="img-card" class="h-48 w-full object-cover rounded-md mb-4" loading="lazy" />
     <h3 class="text-lg font-semibold text-white group-hover:text-indigo-400">{title}</h3>
     <p class="text-sm text-gray-400 mt-1">{description}</p>
   </a>
