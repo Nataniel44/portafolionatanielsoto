@@ -4,7 +4,7 @@ description: "Sitio institucional para formación educativa"
 date: 2024-10-20
 image: "/ins.PNG"
 tags: ["Astro", "Educación", "UI"]
-url: "https://example.com/proyecto4" # Replace with the actual project URL
+url: "https://mundo-infor.web.app/" # Replace with the actual project URL
 ---
 
 Página institucional creada para el Instituto Mundo Informática de Víctor.

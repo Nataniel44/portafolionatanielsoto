@@ -4,7 +4,7 @@ description: "Hamburguesería estilo urbano con identidad fuerte"
 date: 2025-02-10
 image: "/bos.PNG"
 tags: ["Astro", "Frontend", "Tailwind"]
-url: "https://example.com/boston-burger"
+url: "https://bostonburgermenu.web.app/"
 ---
 
 Sitio web visualmente impactante con una estética urbana y oscura, ideal para destacar el menú de una hamburguesería local.
