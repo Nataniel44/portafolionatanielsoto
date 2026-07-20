@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
 const projects = await getCollection("projects");
-const destacados = projects.filter((p) => p.id === "proyecto5" || p.id === "proyecto3" || p.id === "proyecto2");
+const destacados = [projects.find((p) => p.id === "proyecto6"), projects.find((p) => p.id === "proyecto3"), projects.find((p) => p.id === "proyecto5")].filter(Boolean);
 const todos = projects;
 ---
 
@@ -65,7 +65,7 @@ const todos = projects;
             const spans = i === 0 ? "col-span-3 sm:col-span-5" : i === 1 ? "col-span-3 sm:col-span-4" : "col-span-3 sm:col-span-9";
             return (
               <a href={`/projects/${p.id}`} class={`overflow-hidden rounded-xl relative group cursor-pointer ${spans} card-glow`} data-aos="fade-up" data-aos-delay={i * 100}>
-                <img src={p.data.image} alt="" class="h-56 w-full object-top object-cover opacity-60 group-hover:opacity-100">
+                <img src={p.data.image} alt="" loading="lazy" class={"h-56 w-full object-cover opacity-60 group-hover:opacity-100 " + (i === 0 ? "object-center" : "object-top")}>
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
                 <div class="absolute bottom-4 left-4 right-4">
                   <span class="text-xs font-semibold uppercase tracking-wider text-white/70 group-hover:text-blue-300 transition-colors duration-300">{p.data.title}</span>
