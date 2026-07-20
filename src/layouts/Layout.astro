@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+export interface Props {
+  title?: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Nataniel Soto's Portfolio" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ? `${title} - Nataniel Soto` : "Nataniel Soto - Portfolio"}</title>
+  </head>
+  <body>
+    <nav class="nav-glow bg-[#0a0a0f]/70 backdrop-blur-xl text-white text-xl px-6 py-4 font-bold sticky top-0 z-50 border-b border-blue-500/5">
+      <div class="max-w-6xl w-full mx-auto">
+        <a href="/" class="w-full block">
+          <h1 class="m-auto tracking-[0.2em] uppercase text-sm md:text-base font-semibold text-white/80 hover:text-white transition-colors">Nataniel Soto</h1>
+        </a>
+      </div>
+    </nav>
+    <main class="max-w-6xl mx-auto px-6 py-12 grid gap-20">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<script>
+  import "../scripts/i18n.js";
+
+  document.addEventListener("astro:page-load", () => {
+    const nav = document.querySelector(".nav-glow");
+    if (!nav) return;
+    const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    document.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      document.body.style.setProperty("--bgx", `${x}%`);
+      document.body.style.setProperty("--bgy", `${y}%`);
+    }, { passive: true });
+  });
+</script>
